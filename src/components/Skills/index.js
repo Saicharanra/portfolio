@@ -60,10 +60,16 @@ const Skill = styled.div`
   width: 100%;
   max-width: 500px;
   background: ${({ theme }) => theme.card};
-  border: 0.1px solid #854CE6;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  border: 1px solid ${({ theme }) => theme.text_secondary + 20};
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   padding: 18px 36px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid ${({ theme }) => theme.primary + 50};
+  }
   @media (max-width: 768px) {
     max-width: 400px;
     padding: 10px 36px;
@@ -72,8 +78,6 @@ const Skill = styled.div`
     max-width: 330px;
     padding: 10px 36px;
   }
-
-
 `
 
 const SkillTitle = styled.h2`
@@ -96,13 +100,21 @@ const SkillItem = styled.div`
   font-size: 16px;
   font-weight: 400;
   color: ${({ theme }) => theme.text_primary + 80};
-  border: 1px solid ${({ theme }) => theme.text_primary + 80};
+  border: 1px solid ${({ theme }) => theme.text_primary + 20};
+  background: ${({ theme }) => theme.bg};
   border-radius: 12px;
   padding: 12px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: ${({ theme }) => theme.text_primary};
+    border: 1px solid ${({ theme }) => theme.primary};
+    background: ${({ theme }) => theme.primary + 10};
+    transform: scale(1.05);
+  }
   @media (max-width: 768px) {
     font-size: 14px;
     padding: 8px 12px;

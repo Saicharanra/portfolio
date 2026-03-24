@@ -5,33 +5,38 @@ import styled from 'styled-components'
 const Button = styled.button`
     display: none;
     width: 100%;
-    padding: 10px;
-    background-color: ${({ theme }) => theme.white};
-    color: ${({ theme }) => theme.text_black};
-    font-size: 14px;
-    font-weight: 700;
+    padding: 12px;
+    background-color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.white};
+    font-size: 16px;
+    font-weight: 600;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-top: auto;
+    &:hover {
+        background-color: ${({ theme }) => theme.primary + 90};
+    }
 `
 const Card = styled.div`
-    width: 330px;
-    height: 490px;
+    width: 350px;
+    height: 520px;
     background-color: ${({ theme }) => theme.card};
     cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0 0 12px 4px rgba(0,0,0,0.4);
+    border: 1px solid ${({ theme }) => theme.text_secondary + 20};
+    border-radius: 16px;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     padding: 26px 20px;
     display: flex;
     flex-direction: column;
     gap: 14px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 0 50px 4px rgba(0,0,0,0.6);
-        filter: brightness(1.1);
+        transform: translateY(-8px);
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+        border: 1px solid ${({ theme }) => theme.primary + 50};
     }
     &:hover ${Button} {
         display: block;
@@ -42,8 +47,9 @@ const Image = styled.img`
     width: 100%;
     height: 180px;
     background-color: ${({ theme }) => theme.white};
-    border-radius: 10px;
-    box-shadow: 0 0 16px 2px rgba(0,0,0,0.3);
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
 `
 
 const Tags = styled.div`
@@ -141,7 +147,7 @@ const ProjectCards = ({project,setOpenModal}) => {
                     <Avatar src={member.img}/>
                 ))}
             </Members>
-            {/* <Button>View Project</Button> */}
+            <Button>View Project</Button>
         </Card>
     )
 }

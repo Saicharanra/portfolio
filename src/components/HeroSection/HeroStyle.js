@@ -2,7 +2,7 @@ import styled from "styled-components";
 import _default from "../../themes/default";
 
 export const HeroContainer = styled.div`
-  background: ${({ theme }) => theme.card_light};
+  background: ${({ theme }) => theme.bg};
   display: flex;
   justify-content: center;
   position: relative;
@@ -14,8 +14,7 @@ export const HeroContainer = styled.div`
     padding: 32px 16px;
   }
   z-index: 1;
-
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
+  border-bottom: 1px solid ${({ theme }) => theme.text_secondary + 20};
 `;
 
 export const HeroBg = styled.div`
@@ -99,7 +98,8 @@ export const Img = styled.img`
   max-width: 400px;
   max-height: 400px;
   border-radius: 50%;
-  border: 2px solid ${({ theme }) => theme.primary};
+  border: 4px solid ${({ theme }) => theme.card_light};
+  box-shadow: 0px 10px 30px -10px ${({ theme }) => theme.primary};
 
   @media (max-width: 768px) {
     max-width: 400px;
@@ -113,18 +113,18 @@ export const Img = styled.img`
 `;
 
 export const Title = styled.div`
-  font-weight: 700;
-  font-size: 50px;
+  font-weight: 800;
+  font-size: 56px;
   color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
+  line-height: 1.2;
+  margin-bottom: 20px;
   @media (max-width: 960px) {
     text-align: center;
   }
 
   @media (max-width: 640px) {
     font-size: 40px;
-    line-height: 48px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
 `;
 
@@ -132,21 +132,26 @@ export const TextLoop = styled.div`
   font-weight: 600;
   font-size: 32px;
   display: flex;
+  align-items: center;
   gap: 12px;
   color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
+  line-height: 1.2;
+  margin-bottom: 20px;
   @media (max-width: 960px) {
     text-align: center;
+    justify-content: center;
   }
   @media (max-width: 640px) {
     font-size: 22px;
-    line-height: 48px;
     margin-bottom: 16px;
+    flex-direction: column;
+    gap: 4px;
   }
 `;
 
 export const Span = styled.span`
   color: ${({ theme }) => theme.primary};
+  text-shadow: 0px 0px 20px ${({ theme }) => theme.primary};
   cursor: pointer;
 `;
 
@@ -176,28 +181,20 @@ export const ResumeButton = styled.a`
     text-align: center;
     padding: 16px 0;
     color:${({ theme }) => theme.white};
-    border-radius: 20px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
-    transition: all 0.2s ease-in-out !important;
-    background: hsla(271, 100%, 50%, 1);
-    background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    box-shadow:  20px 20px 60px #1F2634,
-    -20px -20px 60px #1F2634;
+    transition: all 0.3s ease-in-out !important;
+    background: ${({ theme }) => theme.primary};
+    box-shadow: 0px 4px 14px -3px ${({ theme }) => theme.primary};
     &:hover {
-        transform: scale(1.05);
-    transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
-    filter: brightness(1);
+        transform: translateY(-2px);
+        box-shadow: 0px 8px 20px -5px ${({ theme }) => theme.primary};
     }    
-    
     
     @media (max-width: 640px) {
         padding: 12px 0;
-        font-size: 18px;
+        font-size: 16px;
     } 
-
 `;

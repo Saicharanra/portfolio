@@ -61,9 +61,10 @@ const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.card};
+  border: 1px solid ${({ theme }) => theme.text_secondary + 20};
   padding: 32px;
   border-radius: 16px;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  box-shadow: 0px 4px 24px rgba(0,0,0,0.1);
   margin-top: 28px;
   gap: 12px;
 `
@@ -78,12 +79,13 @@ const ContactTitle = styled.div`
 const ContactInput = styled.input`
   flex: 1;
   background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
+  border: 1px solid ${({ theme }) => theme.text_secondary + 50};
   outline: none;
   font-size: 18px;
   color: ${({ theme }) => theme.text_primary};
   border-radius: 12px;
   padding: 12px 16px;
+  transition: all 0.2s ease-in-out;
   &:focus {
     border: 1px solid ${({ theme }) => theme.primary};
   }
@@ -92,12 +94,13 @@ const ContactInput = styled.input`
 const ContactInputMessage = styled.textarea`
   flex: 1;
   background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
+  border: 1px solid ${({ theme }) => theme.text_secondary + 50};
   outline: none;
   font-size: 18px;
   color: ${({ theme }) => theme.text_primary};
   border-radius: 12px;
   padding: 12px 16px;
+  transition: all 0.2s ease-in-out;
   &:focus {
     border: 1px solid ${({ theme }) => theme.primary};
   }
@@ -107,17 +110,22 @@ const ContactButton = styled.input`
   width: 100%;
   text-decoration: none;
   text-align: center;
-  background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  padding: 13px 16px;
-  margin-top: 2px;
+  background: ${({ theme }) => theme.primary};
+  padding: 14px 16px;
+  margin-top: 8px;
   border-radius: 12px;
   border: none;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({ theme }) => theme.white};
   font-size: 18px;
   font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0px 4px 14px -3px ${({ theme }) => theme.primary};
+  transition: all 0.3s ease-in-out;
+  &:hover {
+      background: ${({ theme }) => theme.primary + 90};
+      transform: translateY(-2px);
+      box-shadow: 0px 8px 20px -5px ${({ theme }) => theme.primary};
+  }
 `
 
 

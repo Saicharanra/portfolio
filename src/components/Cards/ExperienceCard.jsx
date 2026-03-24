@@ -46,8 +46,9 @@ const Card = styled.div`
     gap: 12px;
     transition: all 0.3s ease-in-out;
     &:hover{
-        box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+        box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
         transform: translateY(-5px);
+        border: 1px solid ${({ theme }) => theme.primary + 50};
     }
     @media only screen and (max-width: 768px){
         padding: 10px;
@@ -65,8 +66,9 @@ const Card = styled.div`
 
     }
 
-    border: 0.1px solid #306EE8;
-    box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+    border: 1px solid ${({ theme }) => theme.text_secondary + 20};
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+    background: ${({ theme }) => theme.card};
 `
 
 const Top = styled.div`

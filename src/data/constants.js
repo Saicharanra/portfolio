@@ -1,12 +1,12 @@
 export const Bio = {
-  name: "V.sai charan",
+  name: "V. Sai Charan",
   roles: [
-    "Full Stack Developer",
-    "Front-end developer",
-    "Programmer",
+    "Full Stack Engineer",
+    "Frontend Developer",
+    "Open Source Contributor",
   ],
   description:
-    "I what to become the Full stack developer in software company in the product based company ",
+    "Passionate Full Stack Engineer driven to build scalable, efficient, and visually stunning web applications. Dedicated to crafting exceptional user experiences and continuously mastering modern web technologies.",
   github: "https://github.com/Saicharanra",
   resume:"/",
 };
