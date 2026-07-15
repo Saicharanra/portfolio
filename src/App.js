@@ -1,11 +1,10 @@
 import { ThemeProvider } from "styled-components";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { darkTheme, lightTheme } from './utils/Themes.js'
 import Navbar from "./components/Navbar";
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import HeroSection from "./components/HeroSection";
-import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
@@ -25,6 +24,7 @@ const Wrapper = styled.div`
   padding-bottom: 2rem;
 `
 function App() {
+  // eslint-disable-next-line no-unused-vars
   const [darkMode, setDarkMode] = useState(true);
   const [openModal, setOpenModal] = useState({ state: false, project: null });
   console.log(openModal)

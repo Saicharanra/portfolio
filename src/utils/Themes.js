@@ -2,6 +2,7 @@ export const darkTheme = {
     bg: "#0B0E14",
     bgLight: "#151A23",
     primary: "#3A86FF",
+    secondary: "#9B5DE5",
     text_primary: "#FFFFFF",
     text_secondary: "#A1A1AA",
     card: "#151A23",
@@ -9,12 +10,16 @@ export const darkTheme = {
     button: "#3A86FF",
     white: "#FFFFFF",
     black: "#000000",
+    glow: "rgba(58, 134, 255, 0.45)",
+    secondaryGlow: "rgba(155, 93, 229, 0.45)",
+    glassBorder: "rgba(255, 255, 255, 0.08)",
 }
 
 export const lightTheme = {
     bg: "#FAFAFA",
     bgLight: "#F0F2F5",
     primary: "#3A86FF",
+    secondary: "#9B5DE5",
     text_primary: "#0B0E14",
     text_secondary: "#5E6A80",
     card: "#FFFFFF",
@@ -22,4 +27,7 @@ export const lightTheme = {
     button: "#3A86FF",
     white: "#FFFFFF",
     black: "#000000",
+    glow: "rgba(58, 134, 255, 0.2)",
+    secondaryGlow: "rgba(155, 93, 229, 0.2)",
+    glassBorder: "rgba(0, 0, 0, 0.08)",
 }

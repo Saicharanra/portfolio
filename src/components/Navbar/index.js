@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, NavLink, NavbarContainer, Span, NavLogo, NavItems, GitHubButton, ButtonContainer, MobileIcon, MobileMenu, MobileLink } from './NavbarStyledComponent'
+import { Nav, NavLink, NavbarContainer, Span, NavLogo, LogoLink, NavItems, GitHubButton, ButtonContainer, MobileIcon, MobileMenu, MobileLink } from './NavbarStyledComponent'
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
 import { Bio } from '../../data/constants';
@@ -12,9 +12,10 @@ const Navbar = () => {
     <Nav>
       <NavbarContainer>
         <NavLogo to='/'>
-          <a href="/" style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20px', cursor: 'pointer' }}>
-            <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
-          </a>
+          <LogoLink as="div">
+            <DiCssdeck size="3rem" /> 
+            <Span>Portfolio</Span>
+          </LogoLink>
         </NavLogo>
         <MobileIcon>
           <FaBars onClick={() => {
@@ -24,7 +25,6 @@ const Navbar = () => {
         <NavItems>
           <NavLink href="#about">About</NavLink>
           <NavLink href='#skills'>Skills</NavLink>
-          
           <NavLink href='#projects'>Projects</NavLink>
           <NavLink href='#education'>Education</NavLink>
         </NavItems>
@@ -40,14 +40,13 @@ const Navbar = () => {
             <MobileLink href='#skills' onClick={() => {
               setIsOpen(!isOpen)
             }}>Skills</MobileLink>
-            
             <MobileLink href='#projects' onClick={() => {
               setIsOpen(!isOpen)
             }}>Projects</MobileLink>
             <MobileLink href='#education' onClick={() => {
               setIsOpen(!isOpen)
             }}>Education</MobileLink>
-            <GitHubButton style={{padding: '10px 16px',background: `${theme.primary}`, color: 'white',width: 'max-content'}} href={Bio.github} target="_blank">Github Profile</GitHubButton>
+            <GitHubButton style={{padding: '10px 16px', background: `linear-gradient(135deg, ${theme.primary} 0%, ${theme.secondary} 100%)`, color: 'white', width: 'max-content'}} href={Bio.github} target="_blank">Github Profile</GitHubButton>
           </MobileMenu>
         }
       </NavbarContainer>
